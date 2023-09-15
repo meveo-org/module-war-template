@@ -1,17 +1,17 @@
 #!/bin/bash
 
-wildfy_home="/opt/jboss/wildfy"
-deployment_folder="$wildfy_home/standalone/deployments"
-temp_folder="$wildfy_home/standalone/databackup"
+wildfly_home="__WILDFLY_PATH__"
+deployment_folder="$wildfly_home/standalone/deployments"
+temp_folder="$wildfly_home/standalone/databackup"
 ear_file="meveo.ear"
 
-#-------------------remveo meveo.ear file -----------------------------
+# remove meveo.ear file
 rm "$deployment_folder/$ear_file*"
-#----------------------reload wildfy -----------------------------------
-/$wildfy_home/bin/jboss-cli.sh --connect --command="shutdown --restart=true"
-#---------------------copy meveo.ear filec #-deploymnet new meveo.ear---
+# reload wildfly
+/$wildfly_home/bin/jboss-cli.sh --connect --command="shutdown --restart=true"
+# copy meveo.ear file from temp folder ---
 cp "$temp_folder/$ear_file" "$deployment_folder"
-#------------remove temporary file--------------------------------------
+# remove temporary file
 rm -r $temp_folder
 
 

@@ -1,80 +1,76 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd" xmlns="http://maven.apache.org/POM/4.0.0"
-    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
-  <modelVersion>4.0.0</modelVersion>
+<project xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd"
+         xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <modelVersion>4.0.0</modelVersion>
 
-  <groupId>org.meveo</groupId>
-  <artifactId>moduleartifactId</artifactId>
-  <version>moduleversion</version>
-  <packaging>war</packaging>
-    
-  
-  	<properties>
-  		<maven.compiler.target>11</maven.compiler.target>
-  		<maven.compiler.source>11</maven.compiler.source>
-  		<failOnMissingWebXml>false</failOnMissingWebXml>
-  		<meveo.version>meveo.base.version</meveo.version>
-  		<jakartaee.version>8.0.0</jakartaee.version>
-		<build-helper-maven-plugin.version>3.2.0</build-helper-maven-plugin.version>
-  	</properties> 
+    <groupId>org.meveo</groupId>
+    <artifactId>__MODULE_ARTIFACT_ID__</artifactId>
+    <version>__MODULE_VERSION__</version>
+    <packaging>war</packaging>
 
-  	<dependencies>
-  	
-  	         <dependency>
-		   	<groupId>jakarta.platform</groupId>
-		   	<artifactId>jakarta.jakartaee-web-api</artifactId>
-		   	<version>${jakartaee.version}</version>
-		   	<scope>provided</scope>
-  		</dependency>
-  
-  		<dependency>
-  			<groupId>org.meveo</groupId>
-  			<artifactId>meveo</artifactId>
-  			<version>${meveo.version}</version>
-  			<type>pom</type>
-  			<scope>import</scope>
-  		</dependency>
-  
-  		
-                <dependency>
-  			<groupId>org.meveo</groupId>
-  			<artifactId>meveo-api</artifactId>
-  			<version>${meveo.version}</version>
-  			<optional>true</optional>
-  		</dependency>
-  
-	</dependencies>
-  
-  <build>
-		<finalName>${project.artifactId}</finalName>
-		
-		<plugins>
 
-		<plugin>
-			<groupId>org.codehaus.mojo</groupId>
-			<artifactId>build-helper-maven-plugin</artifactId>
-			<version>${build-helper-maven-plugin.version}</version>
-			<executions>
-				<execution>
-					<id>add-source</id>
-					<phase>generate-sources</phase>
-					<goals>
-						<goal>add-source</goal>
-					</goals>
-					<configuration>
-						<sources>
-							<source>src/main/javaee</source>
-						</sources>
-					</configuration>
-				</execution>
-			</executions>
-		</plugin>
-		</plugins>
-		
-	</build>
-	
-	 
-               repositorylist
-          
- 
+    <properties>
+        <maven.compiler.target>11</maven.compiler.target>
+        <maven.compiler.source>11</maven.compiler.source>
+        <failOnMissingWebXml>false</failOnMissingWebXml>
+        <meveo.version>__MEVEO_VERSION__</meveo.version>
+        <jakartaee.version>8.0.0</jakartaee.version>
+        <build-helper-maven-plugin.version>3.2.0</build-helper-maven-plugin.version>
+    </properties>
+
+    <dependencies>
+
+        <dependency>
+            <groupId>jakarta.platform</groupId>
+            <artifactId>jakarta.jakartaee-web-api</artifactId>
+            <version>${jakartaee.version}</version>
+            <scope>provided</scope>
+        </dependency>
+
+        <dependency>
+            <groupId>org.meveo</groupId>
+            <artifactId>meveo</artifactId>
+            <version>${meveo.version}</version>
+            <type>pom</type>
+            <scope>import</scope>
+        </dependency>
+
+
+        <dependency>
+            <groupId>org.meveo</groupId>
+            <artifactId>meveo-api</artifactId>
+            <version>${meveo.version}</version>
+            <optional>true</optional>
+        </dependency>
+
+    </dependencies>
+
+    <build>
+        <finalName>${project.artifactId}</finalName>
+        <plugins>
+            <plugin>
+                <groupId>org.codehaus.mojo</groupId>
+                <artifactId>build-helper-maven-plugin</artifactId>
+                <version>${build-helper-maven-plugin.version}</version>
+                <executions>
+                    <execution>
+                        <id>add-source</id>
+                        <phase>generate-sources</phase>
+                        <goals>
+                            <goal>add-source</goal>
+                        </goals>
+                        <configuration>
+                            <sources>
+                                <source>src/main/javaee</source>
+                            </sources>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
+        </plugins>
+    </build>
+
+    <!--REPOSITORY_LIST-->
+
 </project>
