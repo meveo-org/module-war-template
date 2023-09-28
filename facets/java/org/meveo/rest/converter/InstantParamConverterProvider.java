@@ -1,10 +1,8 @@
 package org.meveo.rest.converter;
 
-
 import java.lang.annotation.Annotation;
 import java.lang.reflect.Type;
 import java.time.Instant;
-
 import javax.ws.rs.ext.ParamConverter;
 import javax.ws.rs.ext.ParamConverterProvider;
 import javax.ws.rs.ext.Provider;
@@ -13,9 +11,7 @@ import javax.ws.rs.ext.Provider;
 public class InstantParamConverterProvider implements ParamConverterProvider {
     @SuppressWarnings("unchecked")
     @Override
-    public <T> ParamConverter<T> getConverter(Class<T> rawType,
-                                              Type genericType,
-                                              Annotation[] annotations) {
+    public <T> ParamConverter<T> getConverter(Class<T> rawType, Type genericType, Annotation[] annotations) {
         if (rawType.isAssignableFrom(Instant.class)) {
             return (ParamConverter<T>) new InstantParamConverter();
         }

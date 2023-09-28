@@ -62,7 +62,7 @@
                         </goals>
                         <configuration>
                             <sources>
-                                <source>src/main/javaee</source>
+                                <source>src/main/java</source>
                             </sources>
                         </configuration>
                     </execution>
